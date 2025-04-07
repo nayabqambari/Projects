@@ -1,0 +1,194 @@
+{% extends 'base_layout 1.html' %}
+{% block content %}
+{% load static %}
+<main>
+    <div class="slider-area " style="position:relative">
+    <header>
+        <!-- Header Start -->
+       <div class="header-area " style=" height: 0px;"> <!-- header-sticky -->
+            <div class="main-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- logo -->
+                        <div class="col-xl-2 col-lg-2"> 
+                            <div class="navbar-header text-center">
+                              <!-- <a class="navbar-brand text-decoration-none" href="/">
+                                <span class="text-warning"><strong style="font-size: 50px;">H</strong>ouse <br>Price Prediction</span></a> -->
+                                <img src="{% static 'assets/img/logo/qta.png' %}" class="logo">
+                            </div>
+                        </div>
+                    <div class="col-xl-10 col-lg-8">
+                            <!-- main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="{% url 'main' %}">Home</a></li>
+                                        <li><a href="{% url 'prediction' %}">Predictions</a></li>
+                                        <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>             
+                        <div class="col-xl-2 col-lg-2"> 
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+        <!-- Header End -->
+      </header>
+    </div>  
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="slider-active dot-style">
+            <div class="single-slider  hero-overly slider-height d-flex align-items-center"  id="sliderimagediv" data-background="{% static 'assets/img/stock/hands-holding.jpg' %}">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-xl-9">
+                            <div class="main">
+                                <h3>WelCome To Quetta</h3>
+                                <h1>Top House Price Prediction <span class="change_content"></span></h1>
+                                <p>High Accuracy</p>
+                                <a href= "#" class="btnone" >learn more</a>
+                                <a href= "#" class="btntwo" >show me more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End--> 
+
+    <!-- Make customer Start-->
+    <section class="make-customer-area customar-padding fix">
+        <div class="container-fluid p-0">
+            <div class="row">
+               <div class="col-xl-5 col-lg-6">
+                    <div class="customer-img mb-120">
+                        <img src="{% static 'assets/img/stock/graph.jpg' %}" class="customar-img1" alt="">
+                        <img src="{% static 'assets/img/customer/customar2.png' %}" class="customar-img2" alt="">
+                        <div class="service-experience heartbeat">
+                            <h3>Accuracte Predictions<br>Analysis</h3>
+                        </div>
+                    </div>
+               </div>
+                <div class=" col-xl-4 col-lg-4">
+                    <div class="customer-caption">
+                        <h2>Make accurate prediction for your stock business</h2>
+                        <div class="caption-details">
+                            <p class="pera-dtails">We offer many companies stock live predictions with great accuracy</p>
+                            <p>The main objective of this project is to miximize the investors’ profit and minimize their loss in stock market business by predicting the future values of the assets whether they will increase or decrease. </p>
+                            <a href="{% url 'contact_us' %}" class="btn border-btn">Learn More <i class="ti-angle-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Make customer End-->
+
+    <!-- Room Start -->
+    <section class="room-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <!--font-back-tittle  -->
+                    <div class="font-back-tittle mb-45">
+                        <div class="archivment-front">
+                            <h3>Key Features</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <!-- Single Room -->
+                    <div class="single-room mb-50">
+                        <div class="room-img">
+                           <a href=""><img style="height: 300px;" src="{% static 'assets/img/stock/business_numbers_board.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="room-caption">
+                            <h3><a href="">List of Pakistani Companies</a></h3>
+                            <div class="per-night">
+                                <span>Atleast 30 companies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <!-- Single Room -->
+                    <div class="single-room mb-50">
+                        <div class="room-img">
+                           <a href="{% url 'prediction' %}"><img style="height: 300px;" src="{% static 'assets/img/stock/financial_analysis.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="room-caption">
+                            <h3><a href="{% url 'prediction' %}">Deep Analysis</a></h3>
+                            <div class="per-night">
+                                <span>Using Deep Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <!-- Single Room -->
+                    <div class="single-room mb-50">
+                        <div class="room-img">
+                           <a href="{% url 'prediction' %}"> <img style="height: 300px;" src="{% static 'assets/img/stock/graph_updown.png' %}" alt=""></a>
+                        </div>
+                        <div class="room-caption">
+                            <h3><a href="{% url 'prediction' %}">Future Predictions</a></h3>
+                            <div class="per-night">
+                                <span>High Accuracy Always</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <!-- Room End -->
+
+    <!-- Dining Start -->
+    <div class="dining-area dining-padding-top">
+        <!-- Single Left img -->
+        <div class="single-dining-area left-img">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="dining-caption">
+                            <span>Our Vision</span>
+                            <h3>Make your business profitable</h3>
+                            <p>Our mission is to make your stock exchange business profitable by providing more accurate predictions about company shares</p>
+                            <a href="{% url 'contact_us' %}" class="btn border-btn">Learn More <i class="ti-angle-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- single Right img -->
+        <div class="single-dining-area right-img">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="dining-caption text-right">
+                            <span>Our Predictions</span>
+                            <h3>Best Techniques</h3>
+                            <p>We have used best algorithm ever with great accuracy. we have used regression algorithm of deep learning.</p>
+                            <a href="{% url 'contact_us' %}" class="btn border-btn">Learn More  <i class="ti-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</main>
+
+{% endblock %}

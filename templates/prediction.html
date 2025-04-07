@@ -1,0 +1,221 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<script> 
+
+$(document).ready(function(){
+
+    $('.nice-select').css({"line-height": "25px"});
+    $('.nice-select .form-control .nice-select::after').css({"margin-top": "-10px"});
+
+    $('ul.list').css({"max-height": "300px", "width": "100%", "overflow-y": "scroll"});
+    $('.option').css({"width":"100%"});
+    $('#loader').hide();
+    $('#forecasting').click(function () {
+
+        
+
+        top_label = ''
+        label_data = [] 
+        data_data = [] 
+        xdata = []
+        xdate = []
+
+
+    var crime_rate = $('#input_crime_rate').val();
+    var parking_area = $('#input_parking_area').val();
+    var house_towards = $('#input_house_towards').val();
+    var supply_of_water = $('#input_supply_of_water').val();
+    var quality_of_gas = $('#input_quality_of_gas').val();
+    var property_type = $('#input_property_type').val();
+    var house_near_by = $('#input_house_near_by').val();
+    var house_type = $('#input_house_type').val();
+    var stories = $('#input_stories').val();
+    var bathrooms = $('#input_bathrooms').val();
+    var kitchens = $('#input_kitchens').val();
+    var rooms = $('#input_rooms').val();
+    var address = $('#input_address').val();
+    var land_area = $('#input_land_area').val();
+
+        if (crime_rate == null || crime_rate == 'undefined' || crime_rate == '') {
+            $('#input_crime_rate').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(parking_area == null || parking_area == 'undefined' || parking_area == '') {
+            $('#input_parking_area').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(house_towards == null || house_towards == 'undefined' || house_towards == '') {
+            $('#input_house_towards').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(supply_of_water == null || supply_of_water == 'undefined' || supply_of_water == '') {
+            $('#input_supply_of_water').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(quality_of_gas == null || quality_of_gas == 'undefined' || quality_of_gas == '') {
+            $('#input_quality_of_gas').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(property_type == null || property_type == 'undefined' || property_type == '') {
+            $('#input_property_type').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(house_near_by == null || house_near_by == 'undefined' || house_near_by == '') {
+            $('#input_house_near_by').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(house_type == null || house_type == 'undefined' || house_type == '') {
+            $('#input_house_type').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(stories == null || stories == 'undefined' || stories == '') {
+            $('#input_stories').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(bathrooms == null || bathrooms == 'undefined' || bathrooms == '') {
+            $('#input_bathrooms').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(kitchens == null || kitchens == 'undefined' || kitchens == '') {
+            $('#input_kitchens').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(rooms == null || rooms == 'undefined' || rooms == '') {
+            $('#input_rooms').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(address == null || address == 'undefined' || address == '') {
+            $('#input_address').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else if(land_area == null || land_area == 'undefined' || land_area == '') {
+            $('#input_land_area').css({"box-shadow": "0 0 4px #811", "border": "1px solid #600"});
+        }
+        else {
+                $('#loader').show();
+                $('#forecasting').attr("disabled", true);
+                $('.predict_data_value').text("0")
+                api_call(crime_rate, parking_area, house_near_by, house_towards, house_type, stories, supply_of_water, address, rooms, bathrooms, kitchens, land_area, property_type, quality_of_gas);
+        }
+ 
+    });
+    function api_call(crime_rate, parking_area, house_near_by, house_towards, house_type, stories, supply_of_water, address, rooms, bathrooms, kitchens, land_area, property_type, quality_of_gas) {  
+        var endpoint = '{% url "api-data" %}'
+        $.ajax({
+            method: "GET",
+            url: endpoint,  
+            data: { 
+                    crime_rate: crime_rate,  
+                    parking_area: parking_area,
+                    house_near_by: house_near_by,
+                    house_towards: house_towards,
+                    house_type: house_type,  
+                    stories: stories,
+                    supply_of_water: supply_of_water,
+                    address: address,
+                    rooms: rooms,  
+                    bathrooms: bathrooms,
+                    kitchens: kitchens,
+                    land_area: land_area,
+                    property_type: property_type,  
+                    quality_of_gas: quality_of_gas,
+                },
+            success: function(data){ 
+                $('.predict_data_value').text(data.pre_data.toFixed(0))
+                $('#loader').hide();
+                $('#forecasting').removeAttr("disabled");
+            },
+            error: function(error_data){
+                $('#loader').hide();
+                $('#forecasting').removeAttr("disabled");
+                console.log(error_data.statusText) 
+
+            }
+        })
+}
+
+});
+</script>
+  
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper container-fluid px-0">  
+    <!-- Main content -->
+    <section class="container-fluid bg-warning">
+        <div class="row py-2"> 
+        <div class="col-md-6 offset-md-1">
+            <h1 class="text-center mb-2" style="font-size: 70px; font-family: 'Josefin Sans', sans-serif">Get Predictions</h1>
+            
+
+            <div class="row g-4">
+                <div class="col">
+                    <label for="">Address</label>
+                    {{ form.address }}
+                </div>
+                <div class="col">
+                    <label for="">Land Area (Sq.ft)</label>
+                    {{ form.land_area }}
+                </div>
+            
+                <div class="col">
+                    <label for="">No. of Rooms</label>
+                    {{ form.rooms }}
+                </div>
+            </div> 
+
+            <div class="row g-4">
+                <div class="col">
+                    <label for="">No. of Bathrooms</label>
+                    {{ form.bathrooms }}                   
+                </div>
+                <div class="col">
+                    <label for="">No. of Kitchens</label>
+                    {{ form.kitchens }}
+                </div>
+                <div class="col">
+                    <label for="">No. of Floors</label>
+                    {{ form.stories }}
+                </div>                    
+            </div>
+
+            <div class="row g-4">
+                <div class="col">
+                    <label for="">House Type</label>
+                    {{ form.house_type }}
+                </div>
+                <div class="col">
+                    <label for="">Property Type</label>
+                    {{ form.property_type }}
+                </div>                    
+                <div class="col">
+                    <label for="">House Near by</label>
+                    {{ form.house_near_by }}
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col">
+                    <label for="">House Towards</label>
+                    {{ form.house_towards }}
+                </div>                    
+                <div class="col">
+                    <label for="">Quality of Gas</label>
+                    {{ form.quality_of_gas }}
+                </div>
+                <div class="col">
+                    <label for="">Supply of Water</label>
+                    {{ form.supply_of_water }}
+                </div>                    
+            </div>
+            <div class="row g-4">
+                <div class="col">
+                    <label for="">Parking Area</label>
+                    {{ form.parking_area }}
+                </div>
+                <div class="col">
+                    <label for="">Crime Rate</label>
+                    {{ form.crime_rate }}
+                </div> 
+                <div class="col pt-4">
+                    <button class="btn btn-success btn-lg " type="button" id="forecasting" style="color: black; font-family: 'Josefin Sans', sans-serif; background: white; border-color: white">Predict</button>
+                </div>                    
+            </div>
+    </div>
+    <div class="col-md-5 text-center" style="padding-top: 200px;">
+        <h1 style="font-family: 'Josefin Sans', sans-serif; text-align: center;">Price: <span class="predict_data_value" >0</span></h1>
+    </div>
+    </div>
+  </section> 
+</div> 
+                
+
+{% endblock %}

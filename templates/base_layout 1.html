@@ -1,0 +1,196 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>House Predictor</title> 
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> 
+
+    <!-- data table css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    
+    <!-- CSS here -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/gijgo.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slicknav.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/themify-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/nice-select.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style1.css' %}">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <strong>House Prediction</strong>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader Start -->
+
+
+
+{% block content %}
+{% endblock %} 
+
+  <footer>
+    <!-- Footer Start-->
+    <div class="footer-area black-bg p-5">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                   <div class="single-footer-caption mb-30">
+                      <!-- logo -->
+                      <div class="footer-logo mb-3"> 
+                        <a href="/" >
+                          <span class="logoTitle text-white">House Price Prediction</span></a>
+                      </div>
+                      <div class="footer-pera">
+                        <p>Pakistan best house price predicting website</p>
+                      </div>
+                      <div class="footer-social footer-social2">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                          <a href="#"><i class="fab fa-skype"></i></a>
+                      </div>
+                      
+                   </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                    <div class="single-footer-caption mb-30">
+                        <div class="footer-tittle">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="{% url 'main' %}">Home</a></li> 
+                                <li><a href="{% url 'prediction' %}">Predictions</a></li>
+                                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                    <div class="single-footer-caption mb-30">
+                        <div class="footer-tittle">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="tel:+923222214751">Pho: +92 322 221 4751</a></li>
+                                <li><a href="mailto:Quetta.RealEstate@gmail.com">Email: Quetta.RealEstate@gmail.com</a></li>
+                                <li><a href="mailto:support@Quetta_RealEstate.com">support@Quetta_RealEstate.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4  col-sm-5">
+                    <div class="single-footer-caption mb-30">
+                        <div class="footer-tittle">
+                            <h4>Our Location</h4>
+                            <ul>
+                                <li>Sardar Bahadur Khan Women University,</li>
+                                <li>Hazara town quetta</li>
+                            </ul>
+                            <!-- Form -->
+                             <div class="footer-form" >
+                                 <div id="mc_embed_signup">
+                                  <h4>Subscribe</h4>
+                                     <form target="_blank" action=""
+                                     method="get" class="subscribe_form relative mail_part">
+                                         <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                         class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                         onblur="this.placeholder = ' Email Address '">
+                                         <div class="form-icon">
+                                           <button type="submit" name="submit" id="newsletter-submit"
+                                           class="email_icon newsletter-submit button-contactForm"><img src="{% static 'assets/img/logo/form-iocn.jpg' %}" alt=""></button>
+                                         </div>
+                                         <div class="mt-10 info"></div>
+                                     </form>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Footer End-->
+    
+</footer>
+
+
+
+<!-- All JS Custom Plugins Link Here here -->
+<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+		
+<!-- Jquery, Popper, Bootstrap -->
+<!-- <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script> -->
+
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <!-- Jquery Mobile Menu -->
+    <script src="{% static 'assets/js/jquery.slicknav.min.js' %}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <!-- Date Picker -->
+    <script src="{% static 'assets/js/gijgo.min.js' %}"></script>
+<!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/animated.headline.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+    <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+    
+    <!-- contact js -->
+    <script src="{% static 'assets/js/contact.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.form.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/mail-script.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    
+<!-- Jquery Plugins, main Jquery -->	
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+
+</body>
+</html>
