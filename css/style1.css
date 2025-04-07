@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+ 
+.logo{
+    width: 65%;
+    float: left;
+    padding-left: 4%;
+    padding-top: 1%;
+ }
+ 
+ .main-header .main-menu{
+     float: right;
+     list-style: none;
+     margin-top: 20px;
+     padding-right: 10px;
+ }
+ .main-header .main-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 19px;
+ }
+ .main-header .main-menu ul li a:hover{
+    background: #ffc107;
+    color: #fff;
+ }
+ .slider-area .main h3{
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black;
+}
+.slider-area .main h1{
+    margin: 30px 0 20px 0;
+    color: white;
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 1px 5px black;
+    text-transform: uppercase;
+}
+.slider-area .main p{
+    color: white;
+    font-size: 25px;
+    word-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 1px black;
+    
+}
+.slider-area .main a{
+    padding: 12px 30px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease;
+}
+
+.slider-area .main a.btnone{
+    background: #fff;
+    color: #000;
+}
+.slider-area .main a.btnone:hover{
+    background: #ffc107;
+    color: #fff;
+}
+.slider-area .main a.btntwo{
+    background: #ffc107;
+    color: #fff;
+}
+.slider-area .main a.btntwo:hover{
+    background: #fff;
+    color: #000;
+}
+.change_content::after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color: #ffc107;
+    font-style: initial;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: xx-large;
+}
+@keyframes changetext{
+    0%{content: "~Hazara Town~";}
+    20%{content: "~New Hazara Town~";}
+    35%{content: "~Alamdar Road~";}
+    60%{content: "~Mari Abad~";}
+    70%{content: "~Airport Road~";}
+    80%{content: "~Samungali Road~";}
+    90%{content: "~Hazaragani~";}
+    100%{content: "~Sariyab Road~";}
+}
+
+.btnpredict:hover
+{ 
+    background-color: rgb(35, 24, 136);
+}
+    .btnpredict
+    { 
+        padding-top: 25px;
+        height: 50px;
+    }
+
+  .companydetailbtn
+  {
+    position: absolute; top: 40px; left: 40px;
+  }
+  .btnthree{
+    background: #fff;
+    color: #000;
+  }
+  .btnthree:hover{
+    background: #ffc107;
+    color: #fff;
+    
+  }
